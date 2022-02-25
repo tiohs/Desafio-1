@@ -1,0 +1,46 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /opt/firefox/firefox:/home/tiohs/.zinit/polaris/bin:/opt/firefox/firefox:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/tiohs/Android/Sdk/emulator:/home/tiohs/Android/Sdk/tools:/home/tiohs/Android/Sdk/tools/bin:/home/tiohs/Android/Sdk/platform-tools:/home/tiohs/android-studio/bin:/home/tiohs/Android/Sdk/emulator:/home/tiohs/Android/Sdk/tools:/home/tiohs/Android/Sdk/tools/bin:/home/tiohs/Android/Sdk/platform-tools:/home/tiohs/android-studio/bin:/home/tiohs/Android/Sdk/emulator:/home/tiohs/Android/Sdk/tools:/home/tiohs/Android/Sdk/tools/bin:/home/tiohs/Android/Sdk/platform-tools:/home/tiohs/android-studio/bin
+
+Yarn version: 
+  1.22.11
+
+Node version: 
+  14.17.5
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:69:26)
+
+npm manifest: 
+  {
+    "name": "backend",
+    "version": "1.0.0",
+    "main": "src/server.js",
+    "license": "MIT",
+    "scripts": {
+      "dev": "nodemon",
+      "test": "jest"
+    },
+    "dependencies": {
+      "cors": "^2.8.5",
+      "express": "^4.17.1",
+      "uuid": "^8.3.0"
+    },
+    "devDependencies": {
+      "jest": "^25.2.6",
+      "nodemon": "^2.0.2",
+      "supertest": "^4.0.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
