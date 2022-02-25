@@ -30,9 +30,14 @@ app.post("/repositories", (request, response) => {
 });
 
 app.put("/repositories/:id", (request, response) => {
-  const { id } = body.params;
+  const { id } = request.params;
 
-  const repository = repositories.find(e => repositories.indexOf() == id);
+  const findRepositoryIndex = repositories.findIndex(repository => 
+    repository.id == id
+  );
+  if (!(findRepositoryIndex >= 0)) {
+    return response.status(400).json({ error : 'Erro ao encontrar repositorio '})
+  }
 });
 
 app.delete("/repositories/:id", (request, response) => {
