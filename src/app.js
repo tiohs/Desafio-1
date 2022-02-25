@@ -32,12 +32,12 @@ app.post("/repositories", (request, response) => {
 app.put("/repositories/:id", (request, response) => {
   const { id } = request.params;
   const { title, url, techs } = request.body;
-  
+
   const findRepositoryIndex = repositories.findIndex(repository => 
     repository.id == id
   );
   if (!(findRepositoryIndex >= 0)) {
-    return response.status(400).json({ error : 'Erro ao encontrar repositorio '})
+    return response.status(400).json({ error : 'Erro ao encontrar repositorio '});
   }
   const repository = {
     id: id, 
@@ -66,7 +66,16 @@ app.delete("/repositories/:id", (request, response) => {
 });
 
 app.post("/repositories/:id/like", (request, response) => {
-  // TODO
+  const { id } = request.params;
+
+  const findRepositoryIndex = repositories.findIndex(repository => 
+    repository.id == id
+  );
+  if (!(findRepositoryIndex >= 0)) {
+    return response.status(400).json({ error : 'Erro ao encontrar repositorio '});
+  }
+  repositories[findRepositoryIndex].likes += 1;
+  return response.json(repositories[findRepositoryIndex]);
 });
 
 module.exports = app;
